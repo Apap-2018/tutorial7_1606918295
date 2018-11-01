@@ -50,7 +50,7 @@ public class FlightController {
     	return allFlight;
     }
     
-    @DeleteMapping(value = "/delete")
+    @DeleteMapping(value = "/{flightId}")
     private String deleteFlight(@RequestParam("flightId") long flightId) {
         FlightModel flight = flightService.getFlightDetailByFlightId(flightId).get();
         flightService.deleteFlight(flight);
